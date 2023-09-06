@@ -1,17 +1,17 @@
 import './header.css';
-import { ReactComponent as Logo } from '../img/logo.svg';
-import { ReactComponent as Profile } from '../img/profile.svg';
+import { ReactComponent as LogoSVG } from '../img/logo.svg';
+import { ReactComponent as ProfileSVG } from '../img/profile.svg';
 
 export function Header () {
     return (
         <header className= "header">
             <div className="container" >
-                <Logo className="logo"/>
+                <LogoSVG className="logo"/>
                 <a href="/" className='tittle'>Metas App</a>
             </div>
             <nav>
                 <a href="/profile" className="vincle">
-                    <Profile className="icon"/>
+                    <ProfileSVG className="icon"/>
                 </a>
             </nav>
         </header>
