@@ -4,7 +4,7 @@ import { ReactComponent as Profile } from '../img/profile.svg';
 
 export function Header () {
     return (
-        <div className= "header">
+        <header className= "header">
             <div className="container" >
                 <Logo className="logo"/>
                 <a href="/" className='tittle'>Metas App</a>
@@ -14,6 +14,6 @@ export function Header () {
                     <Profile className="icon"/>
                 </a>
             </nav>
-        </div>
+        </header>
     );
 }
