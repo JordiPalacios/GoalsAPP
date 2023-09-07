@@ -1,18 +1,19 @@
-import './header.css';
+import styles from './header.module.css';
 import { ReactComponent as LogoSVG } from '../img/logo.svg';
 import { ReactComponent as ProfileSVG } from '../img/profile.svg';
+import Vincle from './vincle.js';
 
 export function Header () {
     return (
-        <header className= "header">
-            <div className="container" >
-                <LogoSVG className="logo"/>
-                <a href="/" className='tittle'>Metas App</a>
+        <header className= {styles.header}>
+            <div className= {styles.container} >
+                <LogoSVG className= {styles.logo} />
+                <a href="/" className= {styles.tittle} >Metas App</a>
             </div>
             <nav>
-                <a href="/profile" className="vincle">
-                    <ProfileSVG className="icon"/>
-                </a>
+                <Vincle 
+                    href="/profile" 
+                    Icon={ProfileSVG} />
             </nav>
         </header>
     );

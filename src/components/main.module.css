@@ -10,3 +10,7 @@
 .mainContent {
     @apply w-full h-full overflow-scroll;
 }
+
+.icon {
+    @apply h-6 w-6;
+}

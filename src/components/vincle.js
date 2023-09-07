@@ -1,8 +1,10 @@
-export default function Vincle ({children, text, href}) {
+import styles from  './vincle.module.css';
+
+export default function Vincle ({Icon, text, href}) {
     return (
-        <a href={href} className="vincle">
-            {children}
-            <span>{text}</span>
+        <a href={href} className={styles.vincle}>
+            <Icon className={styles.icon} />
+            { text && <span className={styles.text}>{text}</span> }
         </a>
     );
 }

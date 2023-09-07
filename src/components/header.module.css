@@ -10,14 +10,6 @@
     @apply mr-2 h-10 w-10;
 }
 
-.vincle {
-    @apply flex items-center px-4 h-xl hover:bg-gray-200;
-}
-
-.icon {
-    @apply h-6 w-6;
-}
-
 .tittle {
     @apply text-lg font-semibold text-gray-900 uppercase;
 }
