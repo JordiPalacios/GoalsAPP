@@ -1,10 +1,7 @@
 import styles from './main.module.css';
-import { ReactComponent as ListSVG } from '../img/lista.svg';
-import { ReactComponent as NewSVG } from '../img/nueva.svg';
+import { ReactComponent as ListSVG } from '../../img/lista.svg';
+import { ReactComponent as NewSVG } from '../../img/nueva.svg';
 import Vincle from './vincle';
-
-// TODO: Crear funcionalidad de night/day
-
 
 export function Main ({children}) {
     return (
