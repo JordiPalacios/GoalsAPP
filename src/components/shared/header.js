@@ -8,7 +8,7 @@ export function Header () {
         <header className= {styles.header} >
             <div className= {styles.container} >
                 <LogoSVG className= {styles.logo} />
-                <a href="/" className= {styles.tittle} >Metas App</a>
+                <a href="/" className= {styles.tittle} >Goals App</a>
             </div>
             <nav>
                 <Vincle 

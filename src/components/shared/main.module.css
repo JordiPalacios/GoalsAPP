@@ -1,6 +1,6 @@
 .mainPage {
     height: calc(100vh - theme('height.mainPage'));
-    @apply flex;
+    @apply flex nm-convex-gray-100;
 }
 
 .aside {

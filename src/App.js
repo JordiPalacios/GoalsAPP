@@ -3,14 +3,14 @@ import './index.css';
 import { Footer } from './components/shared/footer.js';
 import { Header } from './components/shared/header.js';
 import { Main } from './components/shared/main.js';
-import Goal from "./components/list/goal.js";
+import List from "./components/list/list.js";
 
 function App() {
   return (
     <div className="App">
       <Header></Header>
       <Main>
-        <Goal />
+        <List />
       </Main>
       <Footer></Footer>
     </div>

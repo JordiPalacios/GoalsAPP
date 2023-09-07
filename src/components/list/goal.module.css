@@ -1,0 +1,19 @@
+.goal {
+    @apply flex p-2 justify-between;
+}
+/* 
+.flex {
+    @apply
+} */
+
+.icon {
+    @apply h-10 w-10 nm-inset-gray-100 rounded-full flex items-center justify-center text-xl;
+}
+
+.barBg {
+    @apply nm-convex-gray-100 h-1 w-28 rounded to-blue-200;
+}
+
+.barProg {
+    @apply h-1 rounded bg-gradient-to-l from-pink-300 to-purple-500;
+}
