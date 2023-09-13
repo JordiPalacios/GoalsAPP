@@ -23,5 +23,5 @@
 }
 
 .input {
-  @apply nm-inset-gray-100 w-full border rounded-xl h-8;
+  @apply nm-inset-gray-100 w-full border rounded-xl h-8 p-2;
 }
