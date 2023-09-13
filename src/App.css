@@ -1,5 +1,5 @@
 .card {
-  @apply rounded-xl m-4 text-gray-700 text-xs mx-4 nm-flat-white;
+  @apply rounded-xl m-4 text-gray-700 text-xs mx-4 nm-flat-white overflow-hidden;
 }
 
 .button {
@@ -11,9 +11,17 @@
 }
 
 .button--black {
-  @apply nm-flat-gray-100 hover:bg-gray-200;
+  @apply nm-flat-gray-800 text-white hover:bg-gray-900;
 }
 
 .button--gray {
   @apply nm-flat-gray-100 hover:bg-gray-200;
+}
+
+.label {
+  @apply block uppercase text-xs font-bold mb-6;
+}
+
+.input {
+  @apply nm-inset-gray-100 w-full border rounded-xl h-8;
 }
