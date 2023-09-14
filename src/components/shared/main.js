@@ -8,12 +8,12 @@ export function Main ({children}) {
         <div className={styles.mainPage}>
             <aside className={styles.aside}>
                 <Vincle 
-                href="/lista" 
+                to="/list" 
                 text="Lista de Metas"
                 Icon={ListSVG} />
 
                 <Vincle 
-                href="/create" 
+                to="/new" 
                 text="Crear Nuevas Meta"
                 Icon={NewSVG} />
             </aside>

@@ -12,7 +12,7 @@ export function Header () {
             </div>
             <nav>
                 <Vincle 
-                    href="/profile" 
+                    to="/profile" 
                     Icon={ProfileSVG} />
             </nav>
         </header>

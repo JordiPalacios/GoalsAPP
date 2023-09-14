@@ -1,21 +1,21 @@
 import './App.css';
 import './index.css';
-import { Footer } from './components/shared/footer.js';
-import { Header } from './components/shared/header.js';
-import { Main } from './components/shared/main.js';
+import { Route, Routes } from 'react-router-dom';
+import Layout from './components/shared/layout.js';
 import List from "./components/list/list.js";
 import Details from './components/new/details.js';
+import NotFound from './components/notFound.js';
 
 function App() {
   return (
-    <div className="App">
-      <Header></Header>
-      <Main>
-        {/* <List /> */}
-        <Details />
-      </Main>
-      <Footer></Footer>
-    </div>
+    <Routes>
+      <Route path='/' element={<Layout />}>
+        <Route index element={<List />} />
+        <Route path='/list' element={<List />} />
+        <Route path='/new' element={<Details />} />
+      </Route>
+    <Route path='*' element={<NotFound />} />
+    </Routes>
   );
 }
 
