@@ -39,10 +39,38 @@ const initState = {
     objects: {}
 };
 
+function reducer(state, action) {
+    switch(action.type) {
+        case 'colocate' : {
+            const goals = action.goals;
+            const newState = {
+                order: goals.map(goal => goal.id),
+                objects: goals.reduce((object, goal) => ({...object, [goal.id] : goal}), {})
+            };
+            return newState;
+        };
+        case 'create' : {
+            //Creamos una id random simulando que el back nos da una id en concreto
+            const id = Math.random();
+            const newState = {
+                order: [...state.order, id],
+                objects: {
+                    ...state.objects,
+                    [id]: action.goal
+                }
+            };
+            return newState;
+        };
+    }
+
+}
+
+const goals = reducer(initState, {type: 'colocate', goals:listMock});
+
 export const Context = createContext(null);
 
 function Memory( {children} ) {
-    const [state, dispatch] = useReducer(reducer, initState);
+    const [state, dispatch] = useReducer(reducer, goals);
     return ( 
         <Context.Provider value={[state, dispatch]}>
             {children}

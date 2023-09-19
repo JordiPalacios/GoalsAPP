@@ -3,9 +3,9 @@ import Goal from './goal.js'
 import { Context } from '../../services/memory.js';
 
 function List() {
-    const goals = useContext(Context);
+    const [state, dispatch] = useContext(Context);
     return (  
-       goals.map(goal => <Goal key={goal.id} {...goal}></Goal>)
+       state.order.map(id => <Goal key={id} {...state.objects[id]}></Goal>)
     );
 }
 

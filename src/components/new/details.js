@@ -1,5 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import styles from "../new/details.module.css";
+import { Context } from "../../services/memory";
+import { useNavigate } from "react-router-dom";
+
 
 function Details() {
 
@@ -11,6 +14,8 @@ function Details() {
         goal: 33,
         deadline: '20240101'
     });
+
+    const [state, dispatch] = useContext(Context);
     
     const {details, events, period, icon, goal, deadline, completed} = form;
 
@@ -22,8 +27,11 @@ function Details() {
         // console.log(form);
     }, [form])
 
+    const navegate = useNavigate();
+
     const create = async () => {
-        console.log(form);
+        dispatch({type: 'create', goal: form});
+        navegate('/list');
     }
 
     const frequency = ["day", "week", "month", "year"];
