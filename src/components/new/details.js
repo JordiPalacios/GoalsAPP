@@ -41,8 +41,8 @@ function Details() {
         navegate('/list');
     }
 
-    const refresh = () => {
-        dispatch({type: 'refresh', goal: form});
+    const update = () => {
+        dispatch({type: 'update', goal: form});
         navegate('/list');
     }
 
@@ -131,8 +131,8 @@ function Details() {
                 >Create</button>}
                 {id && <button 
                     className="button button--black"
-                    onClick={refresh}
-                >Refresh</button>}
+                    onClick={update}
+                >Update</button>}
                 {id && <button 
                     className="button button--red"
                     onClick={deleteGoal}

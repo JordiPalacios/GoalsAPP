@@ -61,7 +61,7 @@ function reducer(state, action) {
             };
             return newState;
         };
-        case 'refresh' : {
+        case 'update' : {
             const id = action.goal.id;
             state.objects[id] = {
                 ...state.objects[id],
