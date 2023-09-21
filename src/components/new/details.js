@@ -1,10 +1,12 @@
 import { useEffect, useState, useContext } from "react";
 import styles from "../new/details.module.css";
 import { Context } from "../../services/memory";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 
 function Details() {
+
+    const { id } = useParams();
 
     const [form, setForm] = useState({
         details: '',
@@ -24,13 +26,32 @@ function Details() {
     }
 
     useEffect(() => {
-        // console.log(form);
-    }, [form])
+        const goalMemory = state.objects[id];
+        if (!id) return;
+        if (!goalMemory) {
+            return navegate('/list');
+        }
+        setForm(goalMemory);
+    }, [id]);
 
     const navegate = useNavigate();
 
-    const create = async () => {
+    const create = () => {
         dispatch({type: 'create', goal: form});
+        navegate('/list');
+    }
+
+    const refresh = () => {
+        dispatch({type: 'refresh', goal: form});
+        navegate('/list');
+    }
+
+    const deleteGoal = () => {
+        dispatch({type: 'deleteGoal', id});
+        navegate('/list');
+    }
+
+    const cancel = () => {
         navegate('/list');
     }
 
@@ -104,11 +125,22 @@ function Details() {
                 </label>
             </form>
             <div className={styles.buttons}>
+                {!id && <button 
+                    className="button button--black"
+                    onClick={create}
+                >Create</button>}
+                {id && <button 
+                    className="button button--black"
+                    onClick={refresh}
+                >Refresh</button>}
+                {id && <button 
+                    className="button button--red"
+                    onClick={deleteGoal}
+                >Delete</button>}
                 <button 
-                className="button button--black"
-                onClick={create}
-                >Create</button>
-                <button className="button button--gray">Cancel</button>
+                    className="button button--gray"
+                    onClick={cancel}
+                >Cancel</button>
             </div>
         </div>
      );

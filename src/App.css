@@ -7,7 +7,7 @@
 }
 
 .button--red {
-  @apply text-red-500 nm-flat-gray-100;
+  @apply text-red-500 nm-flat-red-50 hover:bg-red-600 hover:text-white;
 }
 
 .button--black {

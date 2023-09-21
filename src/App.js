@@ -13,7 +13,10 @@ function App() {
       <Route path='/' element={<Layout />}>
         <Route index element={<List />} />
         <Route path='/list' element={<List />} >
-          <Route path='/list/:id' element={<PopUp />} />
+          <Route path='/list/:id' element={
+            <PopUp>
+              <Details />
+            </PopUp>} />
         </Route>
         <Route path='/new' element={<Details />} />
       </Route>
