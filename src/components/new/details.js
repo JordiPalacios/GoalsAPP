@@ -29,7 +29,7 @@ function Details() {
         const goalMemory = state.objects[id];
         if (!id) return;
         if (!goalMemory) {
-            return navegate('/list');
+            return navegate('/404');
         }
         setForm(goalMemory);
     }, [id]);
@@ -56,7 +56,7 @@ function Details() {
     }
 
     const frequency = ["day", "week", "month", "year"];
-    const emojis = ["👨‍💻", "🏋️‍♂️", "💻", "📌", "🚁", "🎥", "🎶", "🏃‍♂️", "📚", "🍏", "🤑"];
+    const emojis = ["👨‍💻", "🏋️‍♂️", "💻", "📌", "🚁", "🎥", "🎶", "🏃‍♂️", "📚", "🍏", "🤑", "🚀", "🎧" ];
 
     return ( 
         <div className="card">
