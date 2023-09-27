@@ -1,4 +1,4 @@
-import { createContext, memo, useReducer } from "react";
+import { createContext, useReducer } from "react";
 
 const memory = localStorage.getItem('goals');
 const initState = memory
@@ -53,6 +53,8 @@ function reducer(state, action) {
             localStorage.setItem('goals', JSON.stringify(newState))
             return newState;
         };
+        default:
+            throw new Error();
     }
 
 }

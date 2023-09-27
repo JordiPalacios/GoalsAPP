@@ -7,5 +7,4 @@ function PopUp({children}) {
         </div>
     );
 }
-
 export default PopUp;

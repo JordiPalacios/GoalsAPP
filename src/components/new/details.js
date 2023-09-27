@@ -5,7 +5,6 @@ import { useNavigate, useParams } from "react-router-dom";
 
 
 function Details() {
-
     const { id } = useParams();
 
     const [form, setForm] = useState({
@@ -25,16 +24,18 @@ function Details() {
         setForm(state => ({...state, [prop]:event.target.value}));
     }
 
+    const navegate = useNavigate();
+
+    const goalMemory = state.objects[id];
+
     useEffect(() => {
-        const goalMemory = state.objects[id];
+        
         if (!id) return;
         if (!goalMemory) {
             return navegate('/404');
         }
         setForm(goalMemory);
-    }, [id]);
-
-    const navegate = useNavigate();
+    }, [id, goalMemory, navegate]);
 
     const create = () => {
         dispatch({type: 'create', goal: form});
@@ -83,7 +84,7 @@ function Details() {
                             className="input"
                             value={period}
                             onChange={e => onChagne(e, 'period')}>
-                                {frequency.map(option => <option value={option}>{option}</option>)}
+                                {frequency.map(option => <option key={option} value={option}>{option}</option>)}
                         </select>
                     </div>
                 </label>            
@@ -120,7 +121,7 @@ function Details() {
                         className="input"
                         value={icon}
                         onChange={e => onChagne(e, 'icon')} >
-                            {emojis.map(emoji => <option value={emoji}>{emoji}</option>)}
+                            {emojis.map(emoji => <option key={emoji} value={emoji}>{emoji}</option>)}
                     </select>
                 </label>
             </form>
