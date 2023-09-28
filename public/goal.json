@@ -1,0 +1,10 @@
+{
+        "id": "3",
+        "details": "Backend",
+        "events": 4,
+        "period": "day",
+        "icon": "📌",
+        "goal": 1,
+        "deadline": "20240101",
+        "completed": 50
+}
